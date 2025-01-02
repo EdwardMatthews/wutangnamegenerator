@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #fbbf24;
+  --secondary: #f59e0b;
+  --accent: #d97706;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  @apply bg-gradient-to-b from-zinc-900 to-black text-white;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .header-scroll {
+    @apply fixed top-0 left-0 right-0 z-50 bg-zinc-900/95 backdrop-blur-sm;
+  }
+  
+  .header-scroll:after {
+    content: '';
+    @apply absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity duration-300 opacity-0;
+  }
+  
+  .header-scroll.scrolled:after {
+    @apply opacity-100;
+  }
+
+  .header-content {
+    @apply relative z-50;
+  }
+
+  .main-content {
+    @apply pt-16 md:pt-20;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-yellow-500 text-black font-bold rounded-lg 
+    transform transition-all duration-300 hover:scale-105 
+    hover:bg-yellow-400 active:scale-95 focus:outline-none 
+    focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-zinc-700 text-white font-bold rounded-lg 
+    transform transition-all duration-300 hover:scale-105 
+    hover:bg-zinc-600 focus:outline-none focus:ring-2 
+    focus:ring-zinc-500 focus:ring-opacity-50;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-8 text-center text-yellow-500;
+  }
+
+  .card {
+    @apply bg-zinc-800/50 p-6 rounded-xl shadow-lg 
+    border border-zinc-700 hover:border-yellow-500 
+    transition-all duration-300;
+  }
+
+  .name-item {
+    @apply bg-zinc-800/80 p-4 rounded-lg mb-4 text-xl 
+    border border-zinc-700 hover:border-yellow-500 
+    transform transition-all duration-300 hover:scale-105;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-fade-in-new {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Header scroll effect */
+@media screen and (min-width: 768px) {
+  :is(html:has(main [id^="features"]:target), 
+      html:has(main [id^="how-it-works"]:target), 
+      html:has(main [id^="faq"]:target)) .header-scroll:after {
+    @apply opacity-100;
+  }
+}

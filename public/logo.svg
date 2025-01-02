@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="100" cy="100" r="95" fill="black" stroke="#F59E0B" stroke-width="2"/>
+  
+  <!-- 外圈装饰 -->
+  <circle cx="100" cy="100" r="85" 
+          stroke="#F59E0B" 
+          stroke-width="1" 
+          stroke-dasharray="4,4" 
+          fill="none"/>
+  
+  <!-- 太极图案 -->
+  <g transform="translate(100,100) scale(0.65)">
+    <!-- 太极外边框 -->
+    <circle cx="0" cy="0" r="62" stroke="#F59E0B" stroke-width="4" fill="none"/>
+    
+    <!-- 整体圆形 -->
+    <circle cx="0" cy="0" r="60" fill="#F59E0B"/>
+    
+    <!-- 阴阳分割 -->
+    <path d="M0,-60a30,30 0 0 1 0,60a30,30 0 0 0 0,60a60,60 0 0 0 0,-120" 
+          fill="black"
+          stroke="#F59E0B"
+          stroke-width="1"/>
+    
+    <!-- 阴阳眼 -->
+    <circle cx="0" cy="-30" r="10" fill="black" stroke="#F59E0B" stroke-width="1"/>
+    <circle cx="0" cy="30" r="10" fill="#F59E0B" stroke="black" stroke-width="1"/>
+  </g>
+  
+  <!-- 装饰性文字 -->
+  <path id="curve" 
+        d="M25,100 A75,75 0 0,1 175,100"
+        fill="none"/>
+  <text>
+    <textPath href="#curve" 
+              startOffset="50%" 
+              text-anchor="middle"
+              fill="#F59E0B" 
+              font-family="Arial Black" 
+              font-size="15"
+              letter-spacing="1"
+              dominant-baseline="middle">
+      WU TANG NAME GENERATOR
+    </textPath>
+  </text>
+  
+  <!-- 四角装饰 -->
+  <path d="M30 30l10 10M170 30l-10 10M30 170l10-10M170 170l-10-10" 
+        stroke="#F59E0B" 
+        stroke-width="2"/>
+</svg>
