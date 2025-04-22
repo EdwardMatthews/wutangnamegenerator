@@ -21,7 +21,7 @@ const usefulLinks = [
       { name: 'Iframe Generator', url: 'https://www.iframegenerator.pro/' },
       { name: 'DDS to PNG', url: 'https://www.ddstopng.pro/' },
       { name: 'WebP to PDF', url: 'https://webptopdf.pro/' },
-      { name: 'PDF to Markdown', url: 'https://pdftomarkdown.pro/' }
+      { name: 'PDF to Markdown', url: 'https://www.google.com/url?q=https%3A%2F%2Fpdftomarkdown.pro%2F' }
     ]
   }
 ]
